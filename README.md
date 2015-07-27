@@ -1,8 +1,6 @@
 # CSharpSinglyLinkedLists
 
-Cohort Grape (7) Linked List Project.
-
-This is the C# equivalent of https://github.com/elizabrock/linked_list_cohort_blueberry
+Cohort Night Hawk Linked List Project.
 
 
 Instructions
