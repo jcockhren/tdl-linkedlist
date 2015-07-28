@@ -19,10 +19,11 @@ namespace SinglyLinkedLists
             set { throw new NotImplementedException(); }
         }
 
-        private string value;
+        private string value; // same as this.value
+        // Value is a property!! Fix the getter!
         public string Value 
         {
-            get { throw new NotImplementedException(); }
+            get { return value; }
         }
 
         public static bool operator <(SinglyLinkedListNode node1, SinglyLinkedListNode node2)
@@ -37,10 +38,11 @@ namespace SinglyLinkedLists
             return node1.CompareTo(node2) > 0;
         }
 
-        public SinglyLinkedListNode(string value)
+        public SinglyLinkedListNode(string input)
         {
-            throw new NotImplementedException();
-
+            //throw new NotImplementedException();
+            this.value = input;
+            
             // Used by the visualizer:
             allNodes.Add(this);
         }
