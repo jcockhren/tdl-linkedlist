@@ -30,6 +30,7 @@ namespace UnitTestSinglyLinkedLists
             SinglyLinkedListNode node2 = new SinglyLinkedListNode("bar");
             node1.Next = node2;
             Assert.AreEqual(node2, node1.Next);
+            Assert.IsNull(node2.Next);
         }
 
         [TestMethod]

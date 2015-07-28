@@ -15,8 +15,13 @@ namespace SinglyLinkedLists
         private SinglyLinkedListNode next;
         public SinglyLinkedListNode Next
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return next; }
+            set {
+                if (value == this) {
+                    throw new ArgumentException();
+                }
+                this.next = value;
+            }
         }
 
         private string value; // same as this.value
@@ -40,8 +45,10 @@ namespace SinglyLinkedLists
 
         public SinglyLinkedListNode(string input)
         {
-            //throw new NotImplementedException();
             this.value = input;
+
+            // Undeclared data members default to null, but...
+            this.next = null;
             
             // Used by the visualizer:
             allNodes.Add(this);
@@ -55,7 +62,33 @@ namespace SinglyLinkedLists
 
         public bool IsLast()
         {
-            throw new NotImplementedException();
+            /* this makes the test pass
+            if (this.next == null)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
+            */
+            /* Refactor 1: no else statement
+            if (this.next == null)
+            {
+                return true;
+            } 
+            return false;
+            */
+
+            /* Refactor 2 */
+            return this.next == null;
+
         }
+
+
+        public override string ToString()
+        {
+            return this.value;
+        }
+
     }
 }
