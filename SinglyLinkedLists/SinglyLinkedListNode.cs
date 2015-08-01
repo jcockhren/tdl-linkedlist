@@ -43,18 +43,6 @@ namespace SinglyLinkedLists
             return node1.CompareTo(node2) > 0;
         }
 
-        public static bool operator ==(SinglyLinkedListNode node1, SinglyLinkedListNode node2)
-        {
-            return node1.CompareTo(node2) == 0;
-        }
-
-        public static bool operator !=(SinglyLinkedListNode node1, SinglyLinkedListNode node2)
-        {
-            /* The long way
-            return node1.CompareTo(node2) != 0;
-            */
-            return !(node1 == node2);
-        }
 
         public SinglyLinkedListNode(string input)
         {
@@ -71,19 +59,18 @@ namespace SinglyLinkedLists
         public int CompareTo(Object obj)
         {
             SinglyLinkedListNode other_node = obj as SinglyLinkedListNode;
-            if (this.value == other_node.Value)
+            return other_node == null ? 1 : this.value.CompareTo(other_node.Value);
+
+            /* The same as: 
+            if (other_node == null) 
             {
-                return 0;
-            }
-            return 1;
-            /* Come back to this. What are other ways to compare instances? 
-            else
+                return 1;
+            } else 
             {
-                throw new NotImplementedException();
+                return this.value.CompareTo(other_node.Value);
             }
             */
 
-            
         }
 
         public bool IsLast()
@@ -114,6 +101,11 @@ namespace SinglyLinkedLists
         public override string ToString()
         {
             return this.value;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return this.CompareTo(obj) == 0;
         }
 
     }
