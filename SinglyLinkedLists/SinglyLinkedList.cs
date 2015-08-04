@@ -128,7 +128,25 @@ namespace SinglyLinkedLists
         // HINT 3: If you highlight code and right click, you can use the refactor menu to extract a method for you...
         public string Last()
         {
-            throw new NotImplementedException();
+            var node = this.first_node;
+            if (node == null)
+            {
+                return null;
+            } else
+            {
+                // Step 1: Do I need to loop??????
+                // Step 2: IF yes, Do I already have an example of how??? ***
+                // Step 3: How can I modify the previous examples?
+                // Step 4: Write what I think works.
+                // Step 5: Rebuild/Re-run tests
+                // Step 6: Rinse and repeat
+                while(!node.IsLast())
+                {
+                    node = node.Next;
+                }
+                return node.Value;
+
+            }
         }
 
         public void Remove(string value)
