@@ -42,6 +42,12 @@ namespace SinglyLinkedLists
             {
                 first_node = new SinglyLinkedListNode(value);
             } else {
+                var node = this.first_node;
+                while(!node.IsLast()) // What's another way to do this????
+                {
+                    node = node.Next;
+                }
+                node.Next = new SinglyLinkedListNode(value);
             }
         }
 
@@ -55,7 +61,15 @@ namespace SinglyLinkedLists
                 return 0;
             } else
             {
-                return 0; // place holder for now
+                int length = 1;
+                var node = this.first_node;
+                // Complexity is O(n)
+                while (node.Next != null)
+                {
+                    length++;
+                    node = node.Next;
+                }
+                return length;
             }
 
 
@@ -69,7 +83,19 @@ namespace SinglyLinkedLists
                 throw new ArgumentOutOfRangeException();
             } else
             {
-                return ""; // Placeholder 
+
+                var node = this.first_node;
+                
+                for(var i = 0;i<=index;i++)
+                {
+                    if (i == index)
+                    {
+                        break;
+                    }
+                    node = node.Next;
+                }
+                return node.Value;
+                     
             }
         }
 
