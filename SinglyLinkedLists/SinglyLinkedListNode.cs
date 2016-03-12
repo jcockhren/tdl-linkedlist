@@ -15,8 +15,15 @@ namespace SinglyLinkedLists
         private SinglyLinkedListNode next;
         public SinglyLinkedListNode Next
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return this.next; }
+            set {
+                /* 'value' keyword refers to anything on the right side of the assign operator, '=' */
+                if (value == this)
+                {
+                    throw new ArgumentException();
+                }
+                this.next = value;
+            }
         }
 
         private string value; /* Access using "this.value" */
