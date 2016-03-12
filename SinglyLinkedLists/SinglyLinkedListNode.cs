@@ -19,10 +19,10 @@ namespace SinglyLinkedLists
             set { throw new NotImplementedException(); }
         }
 
-        private string value;
+        private string value; /* Access using "this.value" */
         public string Value 
         {
-            get { throw new NotImplementedException(); }
+            get { return value; }
         }
 
         public static bool operator <(SinglyLinkedListNode node1, SinglyLinkedListNode node2)
@@ -39,8 +39,8 @@ namespace SinglyLinkedLists
 
         public SinglyLinkedListNode(string value)
         {
-            throw new NotImplementedException();
 
+            this.value = value;
             // Used by the visualizer:
             allNodes.Add(this);
         }
