@@ -1,6 +1,4 @@
-# CSharpSinglyLinkedLists
-
-Cohort Night Hawk Linked List Project.
+# Test Driven Learning: Linked List
 
 
 Instructions
